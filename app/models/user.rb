@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
   has_one :story
 
+  validates :mobile, presence: true
+
+  before_validation(on: :create) do
+    self.mobile = number.gsub(/[^0-9]/, "") if attribute_present?("mobile")
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
