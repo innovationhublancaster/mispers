@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Message.create(content: "The story starts", order: 1)
-Message.create(content: "Someone goes missing", order: 2)
-Message.create(content: "The end", order: 3)
+Story.create(name: "Story One")
+
+Message.create(content: "The story starts", order: 1, story_id: 1)
+Message.create(content: "Someone goes missing", order: 2, story_id: 1)
+Message.create(content: "The end", order: 3, story_id: 1)

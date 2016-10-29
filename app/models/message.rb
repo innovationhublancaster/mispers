@@ -1,4 +1,6 @@
 class Message < ActiveRecord::Base
+  belongs_to :story
+
   def send_message(mobile)
     require 'clockwork'
 
