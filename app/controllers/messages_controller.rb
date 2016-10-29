@@ -6,6 +6,8 @@ class MessagesController < ApplicationController
 
     @user = User.find_by_mobile(mobile)
 
+    Story.continue(@user)
+
     logger.debug("==============================")
     logger.debug(@user.inspect)
     logger.debug(response)

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:edit, :update, :show, :delete]
-  
+
   # Index action to render all users
   def index
     @users = User.all
@@ -43,6 +43,7 @@ class UsersController < ApplicationController
 
   # The show action renders the individual user after retrieving the the id
   def show
+    Story.start_story(1, @user)
   end
 
   # The destroy action removes the user permanently from the database

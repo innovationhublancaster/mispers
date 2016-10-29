@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
-  has_one :story
+  belongs_to :story
 
   validates :mobile, presence: true
 
-  before_validation(on: :create) do
-    self.mobile = number.gsub(/[^0-9]/, "") if attribute_present?("mobile")
-  end
+  # before_validation(on: :create) do
+  #   self.mobile = number.gsub(/[^0-9]/, "") if attribute_present?("mobile")
+  # end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -16,5 +16,5 @@ class User < ActiveRecord::Base
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
     end
- end
+  end
 end
