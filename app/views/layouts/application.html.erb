@@ -18,7 +18,18 @@
     <% end %>
   </div>
 
-<%= yield %>
+  <div class="wrapper">
+    <header class="header">
+      <h1>Mispers Stories</h1>
+    </header>
+
+    <%= yield %>
+
+    <div class="logo active visible">
+        <%= image_tag 'GMP_logo.png' %>
+    </div>
+
+  </div>
 
 </body>
 </html>

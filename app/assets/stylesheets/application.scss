@@ -328,7 +328,7 @@ body {
   padding: 2em;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.35em;
 
   h1 {
     font-size: 1em;
@@ -398,6 +398,12 @@ body {
   border-radius: 2px;
   background-color: #FFFFFF;
 
+  &:active,
+  &:hover {
+    color: #252525;
+    background: darken(#ffffff, 15%);
+    text-decoration: none;
+  }
   text-transform: uppercase;
 
   -webkit-transition: background-color .2s linear,border-color .2s linear,color .2s linear,opacity .2s linear;
@@ -439,6 +445,9 @@ body {
   .choices {
     width: 100%;
 
+    position: relative;
+    z-index: 100;
+
     -webkit-transition: opacity .5s linear;
     -moz-transition: opacity .5s linear;
     transition: opacity .5s linear;
@@ -477,5 +486,40 @@ body {
 
       position: absolute;
     }
+  }
+}
+
+.sign_up {
+  max-width: 600px;
+  margin: 5em auto;
+
+  text-align: center;
+
+  p {
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+
+  input[type='text'] {
+    max-width: 235px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: .75em auto;
+    background: none;
+    font-size: 50px;
+    text-align: center;
+    outline: none;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    color: #ffffff;
+
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid #ffffff;
+    height: 80px;
   }
 }
