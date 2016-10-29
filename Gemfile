@@ -53,4 +53,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+
 ruby "2.3.1"
