@@ -11,7 +11,6 @@ gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 gem 'clockworksms'
 gem 'pry'
-gem 'phony_rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
