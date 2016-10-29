@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   resources :users
+  resources :messages do
+    collection do
+      get :receive
+    end
+  end
 
   root 'users#index'
 

@@ -20,22 +20,24 @@
   <div class="wrap">
     <div id="welcome" class="welcome full-screen center-vertically active visible">
     	<div class="container centered">
-    	    <h2 id="welcome-message">There are believed to be over 250,000 reported missing persons in the UK every year.</h2>
-          <h2 id="welcome-message">Are you thinking or running away or just want to understand what missing people experience?</h2>
+    	    <h2 id="welcome-message">There are believed to be over 250,000 reported missing persons in the UK every year. Are you thinking or running away or just want to understand what missing people experience?</h2>
 
 
         <span id="start" class="start">
     	    	<span class="text">Experience the true stories of missing people</span>
-    	    	<span class="button">Go</span>
+    	    	<span class="button">Start</span>
     		</span>
     	</div>
     </div>
 
     <div id="intro" class="intro active visible">
     	<div id="choices" class="choices">
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    		<div class="item or"><span>OR</span></div>
-    		<a id="exit" class="item quit">EXIT</a>
+        <p>
+          Choose your story
+          <a href="" class="button">Story 1</span>
+          <a href="" class="button">Story 2</span>
+          <a href="" class="button">Story 3</span>
+        </p>
     	</div>
     	<div class="item-container inner">
     		<div id="item_0" class="item"><p>According to the charity Missing People, 140,000 of those reported are children.</p></div>
@@ -59,7 +61,7 @@
 
     <div id="logo" class="logo no-touching active visible">
     	<figure>
-        <%= image_tag 'GMP_logo.gif' %>
+        <%= image_tag 'GMP_logo.png' %>
     	</figure>
     </div>
   </div>

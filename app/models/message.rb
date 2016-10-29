@@ -5,7 +5,7 @@ class Message < ActiveRecord::Base
     require 'clockwork'
 
     api = Clockwork::API.new( CLOCKWORK_API )
-    message = api.messages.build( :to => mobile, :content => content )
+    message = api.messages.build( :to => mobile, :content => content, :from => '447860033589' )
     response = message.deliver
 
     if response.success

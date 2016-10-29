@@ -394,11 +394,11 @@ body .wrap {
 }
 
 #intro #choices {
-  font-family: 'alternate-gothic-no-3-d',Helvetica,Arial,sans-serif;
+  font-family: "din-condensed-web";
 
   position: absolute;
   z-index: 2;
-  top: 50%;
+  top: 40%;
 
   visibility: hidden;
 
@@ -449,11 +449,10 @@ body .wrap {
 }
 
 #intro .item-container .item {
-  font-family: 'alternate-gothic-no-3-d',Helvetica,Arial,sans-serif;
   font-size: 36px;
 
   position: absolute;
-  top: 50%;
+  top: 40%;
 
   width: 100%;
   padding: 0 20px;
@@ -468,7 +467,7 @@ body .wrap {
 }
 
 #welcome {
-  font-family: 'alternate-gothic-no-3-d',Helvetica,Arial,sans-serif;
+  font-family: "din-condensed-web";
 
   z-index: 9;
 
@@ -492,6 +491,7 @@ body .wrap {
 }
 
 #welcome .container {
+  margin-top: -80px;
   text-align: center;
 }
 
@@ -536,7 +536,7 @@ body .wrap {
   color: #FFFFFF;
 }
 
-#welcome #start .button {
+.button {
   font-size: 20px;
 
   display: inline-block;
@@ -563,7 +563,7 @@ body .wrap {
 #logo {
   position: fixed;
   z-index: 9;
-  bottom: 0;
+  bottom: 2em;
 
   width: 100%;
   padding: 10px 0;
