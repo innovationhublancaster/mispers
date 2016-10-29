@@ -1,11 +1,14 @@
 class User < ActiveRecord::Base
   belongs_to :story
 
-  validates :mobile, presence: true
+  validates :mobile, presence: true, uniqueness: true
+  validates_length_of :mobile, :is => 12, :message => "number invalid, please check and try again."
 
-  # before_validation(on: :create) do
-  #   self.mobile = number.gsub(/[^0-9]/, "") if attribute_present?("mobile")
-  # end
+  phony_normalize :mobile, default_country_code: 'GB'
+
+  before_validation(on: :create) do
+    self.mobile = mobile.gsub(/[^0-9]/, "") if attribute_present?("mobile")
+  end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
