@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users
 
-  root 'users#new'
+  root 'users#index'
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
