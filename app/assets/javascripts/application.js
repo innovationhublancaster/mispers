@@ -15,10 +15,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
 $(document).ready(function(){
-  $( "#start .button" ).click(function() {
+  $( ".start-button" ).click(function() {
     $( "#welcome").removeClass("active visible");
-    $( "#intro").addClass("play");
-    $( "#choices").addClass("active visible");
+    $( "#intro").addClass("play active visible");
+    // $( "#choices").addClass("active visible");
   });
 })
