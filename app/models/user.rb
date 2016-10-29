@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :mobile, presence: true, uniqueness: true
   validates_length_of :mobile, :is => 12, :message => "number invalid, please check and try again."
 
-  phony_normalize :mobile, default_country_code: 'GB'
+  # phony_normalize :mobile, default_country_code: 'GB'
 
   before_validation(on: :create) do
     self.mobile = mobile.gsub(/[^0-9]/, "") if attribute_present?("mobile")
