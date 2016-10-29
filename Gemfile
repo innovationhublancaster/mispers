@@ -9,6 +9,7 @@ gem 'sqlite3', group: :development
 gem 'pg', group: :production
 
 gem 'rails_12factor', group: :production
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
