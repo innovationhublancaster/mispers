@@ -9,6 +9,8 @@ gem 'sqlite3', group: :development
 gem 'pg', group: :production
 
 gem 'rails_12factor', group: :production
+gem 'clockworksms'
+gem 'pry'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

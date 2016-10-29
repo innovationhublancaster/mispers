@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  match 'auth/failure', to: redirect('/'), via: [:get, :post]
-  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :user]
+  match 'auth/failure', to: redirect('/'), via: [:get, :user]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :user]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   #   resources :products do
   #     member do
   #       get 'short'
-  #       post 'toggle'
+  #       user 'toggle'
   #     end
   #
   #     collection do
@@ -44,9 +44,9 @@ Rails.application.routes.draw do
 
   # Example resource route with concerns:
   #   concern :toggleable do
-  #     post 'toggle'
+  #     user 'toggle'
   #   end
-  #   resources :posts, concerns: :toggleable
+  #   resources :users, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:

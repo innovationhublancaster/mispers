@@ -14,9 +14,9 @@ class UsersController < ApplicationController
   # Create action saves the user into database
   def create
     @user = User.new
-    if @user.save(post_params)
+    if @user.save(user_params)
       flash[:notice] = "Successfully created user!"
-      redirect_to post_path(@user)
+      redirect_to user_path(@user)
     else
       flash[:alert] = "Error creating new user!"
       render :new
@@ -29,9 +29,9 @@ class UsersController < ApplicationController
 
   # Update action updates the user with the new information
   def update
-    if @user.update_attributes(post_params)
+    if @user.update_attributes(user_params)
       flash[:notice] = "Successfully updated users!"
-      redirect_to post_path(@users)
+      redirect_to user_path(@user)
     else
       flash[:alert] = "Error updating user!"
       render :edit
@@ -42,11 +42,11 @@ class UsersController < ApplicationController
   def show
   end
 
-  # The destroy action removes the post permanently from the database
+  # The destroy action removes the user permanently from the database
   def destroy
     if @user.destroy
       flash[:notice] = "Successfully deleted user!"
-      redirect_to posts_path
+      redirect_to users_path
     else
       flash[:alert] = "Error updating user!"
     end
@@ -54,11 +54,11 @@ class UsersController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:post).permit(:mobile)
+  def user_params
+    params.require(:user).permit(:mobile)
   end
 
-  def find_post
-    @post = Post.find(params[:id])
+  def find_user
+    @user = User.find(params[:id])
   end
 end
