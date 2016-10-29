@@ -1,5 +1,4 @@
 class Message < ActiveRecord::Base
-
   def send_message(mobile)
     require 'clockwork'
 
@@ -14,5 +13,4 @@ class Message < ActiveRecord::Base
         puts response.error_description
     end
   end
-
 end

@@ -6,6 +6,5 @@ load(app_environment_variables) if File.exists?(app_environment_variables)
 
 CLOCKWORK_API = Rails.application.secrets.clockwork
 
-
 # Initialize the Rails application.
 Rails.application.initialize!
