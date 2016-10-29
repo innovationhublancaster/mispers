@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Message.create(content: "The story starts", order: 1)
+Message.create(content: "Someone goes missing", order: 2)
+Message.create(content: "The end", order: 3)
