@@ -14,8 +14,12 @@ class UsersController < ApplicationController
   # Create action saves the user into database
   def create
     logger.debug("==========================================")
-    logger.debug(params)
+    logger.debug(params['user']['mobile'])
     logger.debug("==========================================")
+
+    if User.find_by_mobile('44' + params['user']['mobile'].to_i.to_s).present?
+      redirect_to user_path(User.find_by_mobile('44' + params['user']['mobile'].to_i.to_s)) and return
+    end
 
     @user = User.new(user_params)
 
