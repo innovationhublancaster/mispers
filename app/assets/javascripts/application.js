@@ -16,10 +16,33 @@
 //= require turbolinks
 //= require_tree .
 
+
+
+function showStoryChoices()
+{
+  $( "#welcome").removeClass("active visible");
+  $( "#intro").addClass("play active visible");
+  $( "#choices").addClass("active visible");
+}
+
 $(document).ready(function(){
-  $( "#start-button" ).click(function() {
-    $( "#welcome").removeClass("active visible");
-    $( "#intro").addClass("play active visible");
-    $( "#choices").addClass("active visible");
+  $("#start-button" ).click(function() {
+    showStoryChoices();
   });
-})
+});
+
+$(window).load(function() {
+  $.urlParam = function(name){
+      var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+      if (results==null){
+         return null;
+      }
+      else{
+         return results[1] || 0;
+      }
+  }
+
+  if($.urlParam("show")) {
+    showStoryChoices();
+  }
+});

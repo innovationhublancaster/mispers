@@ -5,7 +5,11 @@ class User < ActiveRecord::Base
   validates_length_of :mobile, :is => 12, :message => "number invalid, please check and try again."
 
   before_validation(on: :create) do
-    self.mobile = mobile.gsub(/[^0-9]/, "").to_i.to_s.prepend('44') if attribute_present?("mobile")
+    self.mobile = mobile.gsub(/[^0-9]/, "") if attribute_present?("mobile")
+
+    if not self.mobile.include? "44"
+      self.mobile = mobile.to_i.to_s.prepend('44')
+    end
   end
 
   def self.from_omniauth(auth)
