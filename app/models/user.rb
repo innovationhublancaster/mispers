@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   belongs_to :story
 
   validates :mobile, presence: true, uniqueness: true
-  validates_length_of :mobile, :is => 12, :message => "number invalid, please check and try again."
+  # validates_length_of :mobile, :is => 12, :message => "number invalid, please check and try again."
 
   before_validation(on: :create) do
     self.mobile = mobile.gsub(/[^0-9]/, "") if attribute_present?("mobile")
