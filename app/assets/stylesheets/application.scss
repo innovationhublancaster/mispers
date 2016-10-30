@@ -317,15 +317,23 @@ body {
   overflow:auto;
   padding-bottom:100px; /* this needs to be bigger than footer height*/
 }
+
+.page-header {
+  border-color: rgba(255, 255, 255, 0.2)
+}
+
+
 .footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   margin-top: -100px; /* negative value of footer height */
   height: 100px;
   clear:both;
   padding-top:20px;
   text-align: center;
+
   img {
-    width: 150px;
+    width: 130px;
   }
 }
 
