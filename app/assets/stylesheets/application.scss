@@ -258,9 +258,9 @@
 $show_time: 7.5s;
 
 #intro.play #item_0 {
-  -webkit-animation: intro $show_time 1s;
-  -moz-animation: intro $show_time 1s;
-  animation: intro $show_time 1s;
+  -webkit-animation: intro $show_time 0.5s;
+  -moz-animation: intro $show_time 0.5s;
+  animation: intro $show_time 0.5s;
 }
 
 #intro.play #item_1 {
