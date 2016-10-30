@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   before_validation(on: :create) do
     self.mobile = mobile.gsub(/[^0-9]/, "") if attribute_present?("mobile")
 
-    if not self.mobile.include? "44"
+    unless self.mobile.slice(1..2).include? "44"
       self.mobile = mobile.to_i.to_s.prepend('44')
     end
   end
