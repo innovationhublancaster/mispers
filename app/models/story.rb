@@ -7,6 +7,11 @@ class Story < ActiveRecord::Base
     s = Story.find(id)
     s.messages.find_by_order(1).send_message(user.mobile)
     user.update_attributes(story_progress: 1, story_id: id)
+
+    if s.messages.find_by_order(1).continue == true
+      sleep(10)
+      Story.continue(user, "")
+    end
   end
 
   def self.continue(user, msg_response)
@@ -15,17 +20,16 @@ class Story < ActiveRecord::Base
     sp = user.story_progress
     logger.debug(s.inspect)
 
-    # fucks everything!!!!!
     if s.messages.find_by_order(sp+1).present?
-      logger.debug("!!!!!!!!!!!!! Next #{sp + 1}")
-
       msg = s.messages.find_by_order(sp+1)
       msg.send_message(user.mobile)
       user.update_attributes(story_progress: sp+1)
 
+      if msg.continue == true
+        sleep(10)
+        Story.continue(user, "")
+      end
     elsif s.messages.find_by_order(sp).branches == true
-
-      logger.debug("!!!!!!!!!!!!! Branches #{sp}")
 
       msg = s.messages.find_by_order(sp)
 
@@ -33,10 +37,20 @@ class Story < ActiveRecord::Base
         s = Story.find(msg.branches_to_one)
         s.messages.find_by_order(1).send_message(user.mobile)
         user.update_attributes(story_progress: 1, story_id: s.id)
+
+        if msg.continue == true
+          sleep(10)
+          Story.continue(user, "")
+        end
       elsif msg_response == "b"
         s = Story.find(msg.branches_to_two)
         s.messages.find_by_order(1).send_message(user.mobile)
         user.update_attributes(story_progress: 1, story_id: s.id)
+
+        if msg.continue == true
+          sleep(10)
+          Story.continue(user, "")
+        end
       else
         Message.send_message(user.mobile, "Sorry, I could not understand please reply with 'A' or 'B'")
       end
