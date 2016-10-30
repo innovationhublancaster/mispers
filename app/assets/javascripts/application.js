@@ -20,6 +20,6 @@ $(document).ready(function(){
   $( "#start-button" ).click(function() {
     $( "#welcome").removeClass("active visible");
     $( "#intro").addClass("play active visible");
-    // $( "#choices").addClass("active visible");
+    $( "#choices").addClass("active visible");
   });
 })

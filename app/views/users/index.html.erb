@@ -8,31 +8,71 @@
 </div>
 
 <div id="intro" class="jumbotron no-background text-center intro">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<div class="item-container inner">
-		<div id="item_0" class="item"><p>According to the charity Missing People, 140,000 of those reported are children.</p></div>
+		<div id="item_0" class="item">According to the charity Missing People, 140,000 of those reported are children.</div>
 	</div>
 	<div class="item-container inner">
-		<div id="item_1" class="item"><p>Greater Manchester Police deal with the second largest number of reported cases in England and Wales, many of whom are between 18–24.</p></div>
+		<div id="item_1" class="item">Greater Manchester Police deal with the second largest number of reported cases in England and Wales, many of whom are between 18–24.</div>
 	</div>
 	<div class="item-container inner">
-		<div id="item_2" class="item"><p>The most common reason by those asked by Missing People were problems at home.</p></div>
+		<div id="item_2" class="item">The most common reason by those asked by Missing People were problems at home.</div>
 	</div>
 	<div class="item-container inner">
-		<div id="item_3" class="item"><p>Many are considered at risk, or have mental health issues, others are unknown.</p></div>
+		<div id="item_3" class="item">Many are considered at risk, or have mental health issues, others are unknown.</div>
 	</div>
 	<div class="item-container inner">
-		<div id="item_4" class="item"><p>Now imagine you're one of them!</p></div>
+		<div id="item_4" class="item">Now imagine you're one of them!</div>
 	</div>
+	<br>
+	<br>
+	<br>
+	<br>
 	<!-- <div class="item-container inner">
 		<div id="item_5" class="item"><p>Follow the story!</p></div>
 	</div> -->
-
-	<div id="choices" class="choices">
-		<p>
-			Choose your story
-		</p>
-		<a href="<%= new_user_path %>" class="btn btn-default button">Party</a>
-		<a href="<%= new_user_path %>" class="btn btn-default button">Runaway</a>
-		<a href="<%= new_user_path %>" class="btn btn-default button">Taken</a>
+</div>
+<div id="choices" class="jumbotron no-background text-center choices">
+	<p>
+		Choose your story
+	</p>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="panel panel-default background-transparent border-lt">
+				<div class="panel-body">
+					<%= image_tag 'avatar1', class: 'img-responsive img-circle' %>
+					<br>
+					<%= image_tag 'paragraph', class: 'img-responsive' %>
+					<br>
+					<a href="<%= new_user_path %>" class="btn btn-default button">Party</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="panel panel-default background-transparent border-lt">
+				<div class="panel-body">
+					<%= image_tag 'avatar3', class: 'img-responsive img-circle' %>
+					<br>
+					<%= image_tag 'paragraph', class: 'img-responsive' %>
+					<br>
+					<a href="<%= new_user_path %>" class="btn btn-default button">Runaway</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="panel panel-default background-transparent border-lt">
+				<div class="panel-body">
+					<%= image_tag 'avatar2', class: 'img-responsive img-circle' %>
+					<br>
+					<%= image_tag 'paragraph', class: 'img-responsive' %>
+					<br>
+					<a href="<%= new_user_path %>" class="btn btn-default button">Taken</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
