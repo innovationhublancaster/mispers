@@ -5,7 +5,11 @@ Rails.application.routes.draw do
       get :receive
     end
   end
-
+  resources :pages do
+    collection do
+      get :about
+    end
+  end
   root 'users#index'
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :user]

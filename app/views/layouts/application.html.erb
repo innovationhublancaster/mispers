@@ -19,17 +19,16 @@
   </div>
 
   <div class="wrapper">
-    <header class="header">
-      <h1>Mispers Stories</h1>
-    </header>
+    <div class="container extra">
+      <div class="page-header text-center mispers-header">
+        <h1>Mispers Stories</h1>
+      </div>
 
-    <%= yield %>
-
-    <div class="logo active visible">
-        <%= image_tag 'GMP_logo.png' %>
+      <%= yield %>
     </div>
-
   </div>
-
+  <footer class="footer">
+      <%= image_tag 'GMP_logo.png' %>
+  </footer>
 </body>
 </html>

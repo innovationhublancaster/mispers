@@ -1,15 +1,13 @@
-
-
-<div id="welcome" class="welcome active visible">
-	  <h2 class="welcome-message">There are believed to be over 250,000 reported missing persons in the UK every year. Are you thinking or running away or just want to understand what missing people experience?</h2>
-
-
-	  <span class="text">Experience the true stories of missing people</span>
-
-    <span class="button start-button">Start</span>
+<div id="welcome" class="jumbotron no-background text-center welcome active visible">
+	<h2 class="welcome-message">There are believed to be over 250,000 reported missing persons in the UK every year. Are you thinking or running away or just want to understand what missing people experience?</h2>
+	<br>
+	<h2 class="welcome-submessage">Experience the true stories of missing people</h2>
+	<br>
+	<button id="start-button" class="btn btn-default button">Start</button>
+	<a href="/pages/about" class="btn btn-default button">About</a>
 </div>
 
-<div id="intro" class="intro">
+<div id="intro" class="jumbotron no-background text-center intro">
 	<div class="item-container inner">
 		<div id="item_0" class="item"><p>According to the charity Missing People, 140,000 of those reported are children.</p></div>
 	</div>
@@ -23,18 +21,18 @@
 		<div id="item_3" class="item"><p>Many are considered at risk, or have mental health issues, others are unknown.</p></div>
 	</div>
 	<div class="item-container inner">
-		<div id="item_4" class="item"><p>Now imagine you're one of them</p></div>
+		<div id="item_4" class="item"><p>Now imagine you're one of them!</p></div>
 	</div>
 	<!-- <div class="item-container inner">
 		<div id="item_5" class="item"><p>Follow the story!</p></div>
 	</div> -->
 
-  <div id="choices" class="choices">
-    <p>
-      Choose your story
-    </p>
-    <a href="<%= new_user_path %>" class="button">Party</a>
-    <a href="<%= new_user_path %>" class="button">Runaway</a>
-    <a href="<%= new_user_path %>" class="button">Taken</a>
-  </div>
+	<div id="choices" class="choices">
+		<p>
+			Choose your story
+		</p>
+		<a href="<%= new_user_path %>" class="btn btn-default button">Party</a>
+		<a href="<%= new_user_path %>" class="btn btn-default button">Runaway</a>
+		<a href="<%= new_user_path %>" class="btn btn-default button">Taken</a>
+	</div>
 </div>
