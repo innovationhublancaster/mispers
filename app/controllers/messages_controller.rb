@@ -6,7 +6,12 @@ class MessagesController < ApplicationController
 
     @user = User.find_by_mobile(mobile)
 
-    Story.continue(@user)
+    if response.downcase == 'n' || response.downcase == "stop"
+      Story.story_end(@user)
+    else
+      Story.continue(@user)
+    end
+
 
     logger.debug("==============================")
     logger.debug(@user.inspect)

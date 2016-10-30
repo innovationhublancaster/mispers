@@ -23,4 +23,9 @@ class Story < ActiveRecord::Base
     end
   end
 
+  def self.story_end(user)
+    Message.send_message(user.mobile, "Thanks you for playing....")
+    user.update_attributes(story_progress: nil, story_id: nil)
+  end
+
 end
