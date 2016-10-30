@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030011524) do
+ActiveRecord::Schema.define(version: 20161030060318) do
 
   create_table "messages", force: :cascade do |t|
     t.string   "content"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161030011524) do
     t.boolean  "branches",        default: false
     t.integer  "branches_to_one"
     t.integer  "branches_to_two"
+    t.boolean  "continue",        default: true
   end
 
   create_table "stories", force: :cascade do |t|
