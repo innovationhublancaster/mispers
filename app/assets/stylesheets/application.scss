@@ -416,6 +416,10 @@ body {
   -webkit-transition: background-color .2s linear,border-color .2s linear,color .2s linear,opacity .2s linear;
   -moz-transition: background-color .2s linear,border-color .2s linear,color .2s linear,opacity .2s linear;
   transition: background-color .2s linear,border-color .2s linear,color .2s linear,opacity .2s linear;
+
+  &.disable {
+    opacity: 0.4;
+  }
 }
 
 .intro {
@@ -471,6 +475,8 @@ body {
   }
 
   .panel {
+    border: 0;
+
     img {
       max-width: 120px;
       margin: auto;
@@ -495,7 +501,7 @@ body {
   }
 
   input[type='text'] {
-    max-width: 235px;
+    max-width: 250px;
     padding-left: 0;
     padding-right: 0;
     margin: .75em auto;
