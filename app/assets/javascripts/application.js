@@ -17,6 +17,15 @@
 //= require_tree .
 
 
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return results[1] || 0;
+    }
+}
 
 function showStoryChoices()
 {
@@ -25,24 +34,12 @@ function showStoryChoices()
   $( "#choices").addClass("active visible");
 }
 
-$(document).ready(function(){
+document.addEventListener("turbolinks:load", function() {
   $("#start-button" ).click(function() {
     showStoryChoices();
   });
-});
-
-$(window).load(function() {
-  $.urlParam = function(name){
-      var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-      if (results==null){
-         return null;
-      }
-      else{
-         return results[1] || 0;
-      }
-  }
-
+  
   if($.urlParam("show")) {
     showStoryChoices();
   }
-});
+})
