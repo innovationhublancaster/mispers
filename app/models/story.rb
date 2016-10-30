@@ -38,7 +38,6 @@ class Story < ActiveRecord::Base
         s.messages.find_by_order(1).send_message(user.mobile)
         user.update_attributes(story_progress: 1, story_id: s.id)
       else
-        logger.debug("!!!!!!!!!!!!! ISSUE #{msg_response}")
         Message.send_message(user.mobile, "Sorry, I could not understand please reply with 'A' or 'B'")
       end
     else
