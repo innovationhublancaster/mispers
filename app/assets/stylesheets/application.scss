@@ -562,4 +562,13 @@ body {
 .about p {
   text-transform: uppercase;
   line-height: 1.2;
+
+  a {
+    text-decoration: underline;
+    color: #ffffff;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
