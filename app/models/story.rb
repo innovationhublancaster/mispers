@@ -9,7 +9,7 @@ class Story < ActiveRecord::Base
     user.update_attributes(story_progress: 1, story_id: id)
 
     if s.messages.find_by_order(1).continue == true
-      sleep(10)
+      sleep(2)
       Story.continue(user, "")
     end
   end
@@ -26,7 +26,7 @@ class Story < ActiveRecord::Base
       user.update_attributes(story_progress: sp+1)
 
       if msg.continue == true
-        sleep(10)
+        sleep(2)
         Story.continue(user, "")
       end
     elsif s.messages.find_by_order(sp).branches == true
@@ -38,8 +38,8 @@ class Story < ActiveRecord::Base
         s.messages.find_by_order(1).send_message(user.mobile)
         user.update_attributes(story_progress: 1, story_id: s.id)
 
-        if msg.continue == true
-          sleep(10)
+        if s.messages.find_by_order(1).continue == true
+          sleep(2)
           Story.continue(user, "")
         end
       elsif msg_response == "b"
@@ -47,8 +47,8 @@ class Story < ActiveRecord::Base
         s.messages.find_by_order(1).send_message(user.mobile)
         user.update_attributes(story_progress: 1, story_id: s.id)
 
-        if msg.continue == true
-          sleep(10)
+        if s.messages.find_by_order(1).continue == true
+          sleep(2)
           Story.continue(user, "")
         end
       else
