@@ -319,7 +319,13 @@ body {
 }
 
 .page-header {
-  border-color: rgba(255, 255, 255, 0.2)
+  border-color: rgba(255, 255, 255, 0.2);
+
+  border: 0;
+
+  h1 {
+    margin: 0;
+  }
 }
 
 .border-lt{
@@ -328,7 +334,7 @@ body {
 
 
 .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  // border-top: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   margin-top: -100px; /* negative value of footer height */
   height: 100px;
@@ -547,6 +553,13 @@ body {
 .unstyled-link {
   color: #ffffff;
   &:hover{
+    font-weight: bolder;
     color: #ffffff;
+    text-decoration: none;
   }
+}
+
+.about p {
+  text-transform: uppercase;
+  line-height: 1.2;
 }
