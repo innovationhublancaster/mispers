@@ -18,7 +18,7 @@ Message.create(content: "[KEV]: Hey baby, fancy coming to a party tonight at min
 Message.create(content: "[YOU]: Hey, I'm not sure, my mum might not let me xxx. Continue Story? 'Y' or 'N'", order: 4, story_id: 1)
 
 Message.create(content: "[NARRATOR]: Over the course of the day, Kev increased the pressure on Stacey. Continue Story? 'Y' or 'N'", order: 5, story_id: 1)
-Message.create(content: "[KEV]: Your mum doesnt need to know, lie to her and stay your staying at a friends house, come on! xxx. Continue Story? 'Y' or 'N'", order: 6, story_id: 1)
+Message.create(content: "[KEV]: Your mum doesnt need to know, lie to her and say your staying at a friends house, come on! xxx. Continue Story? 'Y' or 'N'", order: 6, story_id: 1)
 
 Message.create(content: "[ADVISE]: In this situation, Stacey could tell her mum above the pressure being applied by the online stranger, or talk to the NSPCC helpline annoymously. Continue Story? 'Y' or 'N'", order: 7, story_id: 1)
 Message.create(content: "[NARRATOR]: Stacey buckles under the pressure and agrees to go to the party at Kev's house. Continue Story? 'Y' or 'N'", order: 8, story_id: 1)
@@ -33,12 +33,10 @@ Message.create(content: "[NARRATOR]: Stacey discovered Kev is not who he said he
 Message.create(content: "[MUM]: What is going on, where are you???. Continue Story? 'Y' or 'N'", order: 14, story_id: 1)
 
 Message.create(content: "[NARRATOR]: Kev is making Stacey feel uncomftable, she wants to leave but is too scared too, Stacey also wont reply to her mum because she is worried about the conciquences of her lie. Continue Story? 'Y' or 'N'", order: 15, story_id: 1)
-Message.create(content: "[NARRATOR]: Staceys options could be to call the police if Kevs behaviour became inapropriate, or to call her mother, parents care about your safety and will not be angry if you admit your mistake. 'A' to call for help, 'B' to Continue Story.", order: 16, story_id: 1, branches_to_one: 2, branches_to_two: 3, branches: true)
+Message.create(content: "[NARRATOR]: Staceys options could be to call the emergency services if Kevs behaviour became inapropriate, or to call her mother, parents care about your safety and will not be angry if you admit your mistake. 'A' to call for help, 'B' to Continue Story.", order: 16, story_id: 1, branches_to_one: 2, branches_to_two: 3, branches: true)
 
-Message.create(content: "[NARRATOR]: Staceys mum picked her up from Kevs safely. Stacey told her mum everything that had happened, they call the police. Continue Story? 'Y' or 'N'", order: 1, story_id: 2)
+Message.create(content: "[NARRATOR]: Staceys mum picked her up from Kevs safely. Stacey told her mum everything that had happened, they call the emergency services. Continue Story? 'Y' or 'N'", order: 1, story_id: 2)
 Message.create(content: "[NARRATOR]: If you ever find yourself in a similar situation or find yourself too afraid to call or return home, visit ........", order: 2, story_id: 2)
-Message.create(content: "[NARRATOR]: The end", order: 3, story_id: 2)
 
 Message.create(content: "[NARRATOR]: Several worried texts arrive from staceys mum. Stacey tries to leave but kev wont let her.... Continue Story? 'Y' or 'N'", order: 1, story_id: 3)
 Message.create(content: "[NARRATOR]: They where NEVER found. Continue? 'Y' or 'N'", order: 2, story_id: 3)
-Message.create(content: "[NARRATOR]: The end", order: 3, story_id: 3)
