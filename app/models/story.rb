@@ -9,14 +9,38 @@ class Story < ActiveRecord::Base
     user.update_attributes(story_progress: 1, story_id: id)
   end
 
-  def self.continue(user)
+  def self.continue(user, msg_response)
     logger.debug(user.inspect)
     s = user.story
     sp = user.story_progress
     logger.debug(s.inspect)
+
+    # fucks everything!!!!!
     if s.messages.find_by_order(sp+1).present?
-       s.messages.find_by_order(sp+1).send_message(user.mobile)
-       user.update_attributes(story_progress: sp+1)
+      logger.debug("!!!!!!!!!!!!! Next #{sp + 1}")
+
+      msg = s.messages.find_by_order(sp+1)
+      msg.send_message(user.mobile)
+      user.update_attributes(story_progress: sp+1)
+
+    elsif s.messages.find_by_order(sp).branches == true
+
+      logger.debug("!!!!!!!!!!!!! Branches #{sp}")
+
+      msg = s.messages.find_by_order(sp)
+
+      if msg_response == "a"
+        s = Story.find(msg.branches_to_one)
+        s.messages.find_by_order(1).send_message(user.mobile)
+        user.update_attributes(story_progress: 1, story_id: s.id)
+      elsif msg_response == "b"
+        s = Story.find(msg.branches_to_two)
+        s.messages.find_by_order(1).send_message(user.mobile)
+        user.update_attributes(story_progress: 1, story_id: s.id)
+      else
+        logger.debug("!!!!!!!!!!!!! ISSUE #{msg_response}")
+        Message.send_message(user.mobile, "Sorry, I could not understand please reply with 'A' or 'B'")
+      end
     else
       # end story
       Message.send_message(user.mobile, "Thanks you for playing....")
